@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+      .info {
+         background-color: #e7f3fe;
+         border-left: 6px solid #2196F3;
+         font-family: cursive;
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
+         width:900px;
+       }
+       p.cursive{
+        font-family: cursive;
+      }
+      p.projectpage{
+         font-family: cursive;
+         font-size:40px
+       }
+       .projectoutput{
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
+         width:900px;
+       }
+
+    </style>
+ </head>
+ <body>
+  <div class="container">
+    <p class="text-center projectpage" id='projects'>Django Projects</p>
+    <!-- {% for th in portfolio %}
+    <p class="text-center cursive" style="background-color:powderblue;">{{th.thoughts}}</p>
+    {% endfor %} -->
+  <!-- </div>
+   <div class="container"> -->
+    {% for project in pyproject %}
+      {% if project.category == "Django" %}
+      <div class="projectoutput">
+        <p class="text-left info">{{project.projectsDesc}} <br>
+        <a href="{{project.projectlink}}">{{project.projectlink}}</a>
+        </p>
+        <p class="text-left cursive">Output:</p>
+        <img src='/media/{{project.projectOutput}}' class="card-img-top">
+      </div>
+      {% endif %}
+    {% endfor %}
+
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+ </body>
+ </html>
