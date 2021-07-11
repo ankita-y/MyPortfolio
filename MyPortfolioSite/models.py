@@ -9,6 +9,9 @@ class Portfolio(models.Model):
     # projects = models.TextField(null=True, blank=True)
     art_images = models.ImageField(upload_to='shop/pics',null=True, blank=True)
     img_desc = models.CharField(max_length=100,blank=True)
+
+    def __str__(self):
+        return self.skills
     
 
 class PythonProjects(models.Model):

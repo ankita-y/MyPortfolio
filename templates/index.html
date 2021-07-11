@@ -14,6 +14,10 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
       <style>
+        .bgclr{
+          background-color:rgb(37, 35, 35);
+          color: white;
+        }
 
         .carousel-inner img {
           width: 100%;
@@ -70,6 +74,7 @@
           margin-right: auto;
           width:800px;
         }
+        
         .carousel-control-prev-icon,
         .carousel-control-next-icon{
         background-color:mediumblue;
@@ -88,11 +93,236 @@
           height: auto;
           padding: 5px;
         }
+        .timeline{
+          position:relative;
+          width:100%;
+          padding:30px 0;
+        }
+        .timeline .timeline-container{
+          position:relative;
+          width:100%;
+        }
+        .timeline .timeline-end,
+        .timeline .timeline-start,
+        .timeline .timeline-year{
+          position:relative;
+          width:100%;
+          text-align: center;
+          z-index: 1;
+        }
+        .timeline .timeline-end p,
+        .timeline .timeline-start p,
+        .timeline .timeline-year p{
+          display:inline-block;
+          width:80px;
+          height:80px;
+          margin:0;
+          padding:30px 0;
+          text-align: center;
+          background: linear-gradient(#4f8fc4, #00539c);
+          border-radius: 100px;
+          box-shadow: 0 0 5px rgba(0,0,0,0.4);
+          color:#fff;
+          font-size: 14px;
+          text-transform: uppercase;
+        }
+        .timeline .timeline-year{
+          margin:30px 0;
+        }
+        .timeline .timeline-continue{
+          position: relative;
+          width:100%;
+          padding:60px 0;  
+        }
+        .timeline .timeline-continue::after{
+          position:absolute;
+          content:'';
+          width:1px;
+          height:100%;
+          top:0;
+          left:50%;
+          margin-left:-1px;
+          background:#4f84c4;
+        }
+        .timeline .row.timeline-left,
+        .timeline .row.timeline-right .timeline-date{
+          text-align: right;
+        }
+        
+        .timeline .row.timeline-right,
+        .timeline .row.timeline-left .timeline-date{
+          text-align: left;
+        }
+        .timeline .timeline-date{
+          font-size: 14px;
+          font-weight: 600;
+          margin:41px 0 0 0;
+        }
+        .timeline .timeline-date::after{
+          content:'';
+          display:block;
+          position:absolute;
+          width:14px;
+          height:14px;
+          top:45px;
+          background:linear-gradient(#4f8fc4, #00539c);
+          box-shadow: 0 0 5px rgba(0,0,0,0.4);
+          border-radius: 15px;
+          z-index: 1;
+        }
+        .timeline .row.timeline-left .timeline-date::after{
+          left:-7px;
+        }
+        .timeline .row.timeline-right .timeline-date::after{
+          right:-7px;
+        }
+        .timeline .timeline-box,
+        .timeline .timeline-launch{
+          position: relative;
+          display:inline-block;
+          margin:15px;
+          padding:20px;
+          border:1px solid #ddd;
+          border-radius: 6px;
+          background-color: #fff;
+        }
+        .timeline .timeline-launch{
+          width:100%;
+          margin:15px 0;
+          padding:0;
+          border:none;
+          text-align: center;
+          background-color:transparent;
+        }
+        .timeline .timeline-box::after,
+        .timeline .timeline-box::before {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+        }
+        
+        .timeline .row.timeline-left .timeline-box::after,
+        .timeline .row.timeline-left .timeline-box::before{
+          left:100%;
+        }
+        .timeline .row.timeline-right .timeline-box::after,
+        .timeline .row.timeline-right .timeline-box::before{
+          right:100%;
+        }
+        
+        .timeline  .timeline-launch .timeline-box::after,
+        .timeline  .timeline-launch .timeline-box::before{
+          left:50%;
+          margin-left: -10px;
+        }
+        .timeline .timeline-box::before{
+          top:25px;
+          border-color:transparent transparent transparent #ddd;
+          border-width:11px;
+        }
+        .timeline .timeline-box::after {
+          top: 26px;
+          border-color: transparent transparent transparent #ffffff;
+          border-width: 10px;
+        }
+        .timeline .row.timeline-right .timeline-box::after{
+          border-color:transparent #fff transparent transparent;
+        }
+        .timeline .row.timeline-right .timeline-box::before{
+          border-color:transparent #ddd transparent transparent;
+        }
+        .timeline .timeline-launch .timeline-box::after{
+          top:-20px;
+          border-color:transparent transparent #ddd transparent;
+        }
+        .timeline .timeline-launch .timeline-box::before{
+          top:-19px;
+          border-color:transparent transparent #fff transparent;
+          border-width: 10px;
+          z-index: 1;
+        }
+        .timeline .timeline-box .timeline-icon{
+          position: relative;
+          width:40px;
+          height:auto;
+          float: left;
+        }
+        .timeline .timeline-icon i{
+          font-size: 25px;
+          color:#4f84c4;
+        }
+        .timeline .timeline-box .timeline-text{
+          position: relative;
+          width:calc(100% - 40px);
+          float: left;
+        }
+        .timeline .timeline-launch .timeline-text{
+          width:100%;
+        }
+        .timeline .timeline-text h3{
+          font-size: 16px;
+          font-weight: 600;
+          margin-bottom:3px;
+        }
+        .timeline .timeline-text p{
+          font-size: 14px;
+          font-weight: 400;
+          margin-bottom:0;
+        }
+        
+        @media (max-width:768px){
+          .timeline .timeline-continue::after{
+            left:40px;
+          }
+        
+          .timeline .timeline-end,
+          .timeline .timeline-start,
+          .timeline .timeline-year,
+          .timeline .row.timeline-left,
+          .timeline .row.timeline-right .timeline-date,
+          .timeline .row.timeline-right,
+          .timeline .row.timeline-left .timeline-date,
+          .timeline .timeline-launch{
+            text-align: left;
+          }
+        
+          .timeline .row.timeline-left .timeline-date::after,
+          .timeline .row.timeline-right .timeline-date::after{
+            left:47px;
+          }
+        
+          .timeline .timeline-box,
+          .timeline .row.timeline-right .timeline-date,
+          .timeline .row.timeline-left .timeline-date{
+            margin-left:55px;
+          }
+        
+          .timeline .timeline-launch .timeline-box{
+            margin-left: 0;
+          }
+          .timeline .row.timeline-left .timeline-box::after{
+            left:-20px;
+            border-color:transparent #fff transparent transparent;
+          }
+          .timeline .row.timeline-left .timeline-box::before{
+            left:-22px;
+            border-color:transparent #ddd transparent transparent;
+          }
+          .timeline .timeline-launch .timeline-box::after,
+          .timeline .timeline-launch .timeline-box::before{
+            left:30px;
+            margin-left: 0;
+          }
+        }
 
     </style>
     <title>MyPortfolio</title>
   </head>
-  <body>
+  <body class ="bodyclr">
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
     <div class="navbar-header">
@@ -103,23 +333,31 @@
     </div>
     <a class="navbar-brand" href="#">MyPortfolio</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+      <ul class="navbar-nav me-auto mb-2 mx-3 mb-lg-0">
+        <li class="nav-item mx-2">
           <a class="nav-link active" aria-current="page" href="#aboutme">AboutMe</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#skills">Skills</a>
+        <li class="nav-item mx-2">
+          <a class="nav-link active" aria-current="page" href="#mycareer">MyCareer</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mx-2">
+          <a class="nav-link active" aria-current="page" href="#skills">MySkills</a>
+        </li>
+        <li class="nav-item mx-2">
           <a class="nav-link active" aria-current="page" href="#projects">Projects</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mx-2">
           <a class="nav-link active" aria-current="page" href="#arts">Arts</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mx-2">
+          <a class="nav-link active" aria-current="page" href="#arts">Blogs</a>
+        </li>
+        <li class="nav-item mx-2">
           <a class="nav-link active" aria-current="page" href="#contact">Contact</a>
         </li>
       </ul>
+      
+      <a class="navbar-brand" aria-current="page" href="#contact">Ankita Yadav</a>
     </div>
     </div>
     </nav>
@@ -128,6 +366,7 @@
       <p class="text-center site"> <i>Welcome To My Personal Portfolio Site</i></p>
       </marquee>
     </div>
+    <!-- Slider -->
     <div class="container">
       <div id="demo" class="carousel slide" data-ride="carousel">
         <ul class="carousel-indicators">
@@ -143,7 +382,7 @@
               <img src="{% static 'images/books.jpg' %}">
             </div>
             <div class="carousel-item">
-              <img src="{% static 'images/PicsArt.jpg' %}">
+              <img src="{% static 'images/paintbrush.jpg' %}">
             </div>
         </div>
       </div>
@@ -156,23 +395,159 @@
     </div>
     <br>
     <div class="container">
-      <p class="text-center aboutme">Thoughts</p>
+      <p class="text-center aboutme">Positive Thoughts</p>
       {% for th in portfolio %}
       <p class="text-center cursive" style="background-color:powderblue;">{{th.thoughts}}</p>
       {% endfor %}
     </div>
+    <!-- About me -->
     <div class="container">
       <p class="text-center aboutme" id ="aboutme">About Me</p>
       <img class="rounded-circle mypic" src="{% static 'images/mypic.jpg' %}" width="250" height="236">
-      <p class="text-center cursive">
-        Hey there, I am Ankita Yadav. Working as a IT Professional in corporate world with 3+ years of experience <br>
-        as a software developer in web development and testing. Follow and improve established processes <br>
+  
+      <p class="text-center cursive my-2">
+        
+        Hey there, This is Ankita Yadav. Working as a IT Professional with 3+ years of experience <br>
+        as a Python Developer. Follow and improve established processes <br>
         for software development life cycle with an agile approach to delivery software.<br>
         B.E Grauated in computer science from LNCT, Bhopal.<br>
-        I love to do sketching, painting and reading books in my free time.</p>
+        Love to do sketching, painting and reading books in my free time.</p>
     </div>
+    <!-- Career -->
     <div class="container">
-      <p class="text-center aboutme" id="skills">Skills</p>
+      <p class="text-center aboutme" id="mycareer">MyCareer</p>
+      <div class = "timeline">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="timeline-container">
+                <div class="timeline-end">
+                  <p>Now</p>
+                </div>
+                <div class="timeline-continue">
+                  <div class="row timeline-right">
+                    <div class="col-md-6">
+                      <p class="timeline-date">
+                        Aug 2021 - Present
+                      </p>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="timeline-box">
+                        <div class="timeline-icon">
+                          <i class="fa fa-gift"></i>
+                        </div>
+                        <div class="timeline-text">
+                          <h3>---</h3>
+                          <p>Python Developer</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="row timeline-left">                    
+                    <div class="col-md-6">
+                      <div class="timeline-box">
+                        <div class="timeline-icon d-md-none d-block">
+                          <i class="fa fa-gift"></i>
+                        </div>
+                        <div class="timeline-text">
+                          <h3>Capgemini, Pune, Maharashtra</h3>
+                          <p>Software Engineer</p>
+                        </div>
+                        <div class="timeline-icon d-md-block d-none">
+                          <i class="fa fa-briefcase"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 d-md-block d-none">
+                      <p class="timeline-date">
+                        Aug 2017 - July 2021
+                      </p>
+                    </div>
+                  </div>
+    
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="timeline-year">
+                        <p></p>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="row timeline-right">
+                    <div class="col-md-6">
+                      <p class="timeline-date">
+                        2013 - 2017
+                      </p>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="timeline-box">
+                        <div class="timeline-icon">
+                          <i class="fa fa-building"></i>
+                        </div>
+                        <div class="timeline-text">
+                          <h3>Lakshmi Narain College of Technology (LNCT), Bhopal, M.P</h3>
+                          <p>Bachelor of Engineering, Computer Science</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="row timeline-left">
+                    <div class="col-md-6 d-md-none d-block">
+                      <p class="timeline-date">
+                        01 Mar 2020
+                      </p>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="timeline-box">
+                        <div class="timeline-icon d-md-none d-block">
+                          <i class="fa fa-home"></i>
+                        </div>
+                        <div class="timeline-text">
+                          <h3>Maharishi Vidhya Mandir, Chhatarpur, M.P</h3>
+                          <p>Schooling</p>
+                        </div>
+                        <div class="timeline-icon d-md-block d-none">
+                          <i class="fa fa-home"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 d-md-block d-none">
+                      <p class="timeline-date">
+                        2006 - 2013
+                      </p>
+                    </div>
+                  </div>
+    
+                  
+    
+                </div>
+                
+                <div class="timeline-start">
+                  <p></p>
+                </div>
+    
+                <!-- <div class="timeline-launch">
+                  <div class="timeline-box">
+                    <div class="timeline-text">
+                      <h3>Schooling</h3>
+                      <p>Maharishi Vidhya Mandir, Chhatarpur</p>
+                    </div>
+                  </div>
+                </div> -->
+    
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>  
+        
+    </div>
+    <!-- About me -->
+    <div class="container">
+      <p class="text-center aboutme" id="skills">MySkills</p>
       {% for port in portfolio %}
         <div class="progress center-block progbar my-3">
           <div class="progress-bar bg-info" role="progressbar" style="width:{{port.skillper}}%"><b>{{port.skills}} {{port.skillper}}%</b>
@@ -181,6 +556,7 @@
       {% endfor %}        
         
     </div>
+    <!-- Projects -->
     <div class="container">
       <p class="text-center aboutme" id='projects'>Projects</p>
       <div class="text-center row">
@@ -217,7 +593,7 @@
             <div class="carousel-item active">
               <div class="row">                
                 <div class="col-xs-3 col-sm-3 col-md-3">
-                  <div class="card" style="width: 18rem;">
+                  <div class="card bgclr" style="width: 18rem;">
                     <img src='/media/{{portfolio.0.art_images}}' class="card-img-top">
                     <div class="card-body">
                       <h6 class="card-title">{{portfolio.0.img_desc}}</h6>
@@ -226,7 +602,7 @@
                 </div>    
                 {% for img in portfolio|slice:"1:" %}
                 <div class="col-xs-3 col-sm-3 col-md-3">
-                  <div class="card" style="width: 18rem;">
+                  <div class="card bgclr" style="width: 18rem;">
                     <img src='/media/{{img.art_images}}' class="card-img-top">
                     <div class="card-body">
                       <h6 class="card-title">{{img.img_desc}}</h6>
@@ -254,13 +630,13 @@
           </a>    
         </div>
       </div>
-
+      <!-- Contact Info -->
     <footer class="text-center text-light bg-dark" id='contact'>  
         <p><b>Contact Info:</b></p>
-        <a href="https://github.com/ankita-y/PythonProjects"><i class="fa fa-github" style="font-size:35px" aria-hidden="true"></i></a> 
-        <a href="#"><i class="fa fa-instagram" style="font-size:35px" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-facebook" style="font-size:35px" aria-hidden="true"></i></a>
-         <a href="https://www.linkedin.com/in/ankita-yadav-a8201b114/"><i class="fa fa-linkedin" style="font-size:35px" aria-hidden="true"></i></a><br>      
+        <a href="https://github.com/ankita-y"><i class="fa fa-github mx-2" style="font-size:35px" aria-hidden="true"></i></a> 
+        <a href="https://www.instagram.com/"><i class="fa fa-instagram mx-2" style="font-size:35px" aria-hidden="true"></i></a>
+        <a href="https://www.facebook.com/"><i class="fa fa-facebook mx-2" style="font-size:35px" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/ankita-yadav-a8201b114/"><i class="fa fa-linkedin mx-2" style="font-size:35px" aria-hidden="true"></i></a><br>      
     </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </body>

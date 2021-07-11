@@ -21,12 +21,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+# SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = '$952jv5jeoxri^j136@xb2g(oiuixbz^8s0s%t+_8q*3_gl^ms'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['myportfolio11.herokuapp.com', 'localhost']
+# ALLOWED_HOSTS = ['myportfolio11.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -125,7 +127,8 @@ STATIC_URL = '/static/'
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR,'static/')
 # ]
-STATIC_ROOT = BASE_DIR / "static"
+# STATIC_ROOT = BASE_DIR / "static"
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 #managing media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media') # location of media files
